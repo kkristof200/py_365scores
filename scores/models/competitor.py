@@ -36,6 +36,7 @@ class Competitor(JSONCodable):
             self.aggregated_score = int(self.aggregated_score)
         
         self.popularity_rank = d['popularityRank']
+        self.image_url = 'https://imagecache.365scores.com/image/upload/f_auto,c_limit,q_auto:eco,d_Competitors:default1.png/Competitors/{}'.format(self.id)
 
 
 # ---------------------------------------------------------------------------------------------------------------------------------------- #
