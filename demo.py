@@ -1,7 +1,7 @@
 from scores import Scores
 
 scores = Scores(debug=True)
-games = scores.get_games(only_major_games=True)
+games = scores.get_games()
 # games = Scores(debug=True).get_games()
 # games = Scores(debug=True).get_games(include_cancelled=True, include_postponed=True)
 # games = Scores(debug=True).get_games(include_cancelled=True, include_postponed=True, only_major_games=True)

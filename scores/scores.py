@@ -104,7 +104,8 @@ class Scores(Api):
         request_timeout: float = 5,
         use_cache: bool = True
     ) -> GameAssets:
-        os.makedirs(image_folder_path, exist_ok=True)
+        if image_folder_path:
+            os.makedirs(image_folder_path, exist_ok=True)
 
         def get_image(
             image_url: str,
