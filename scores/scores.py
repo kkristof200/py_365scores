@@ -29,7 +29,7 @@ class Scores(Api):
         competition_ids: Optional[Union[List[int], int]] = None,
         start_date: Optional[Union[int, datetime, str]] = None, # 03/01/2021
         end_date: Optional[Union[int, str]] = None,   # 03/01/2021
-        only_major_games: bool = True,
+        only_major_games: bool = False,
         only_live_games: bool = False,
         included_status_groups: List[int] = [1, 2, 3, 4],
         include_cancelled: bool = False,
