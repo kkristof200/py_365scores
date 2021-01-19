@@ -4,15 +4,16 @@
 from typing import Union
 
 # Local
-from .base import BaseCompetingObject, Country, Sport
+from .competitor import Competitor
+from .base import Sport, Country
 
 # ---------------------------------------------------------------------------------------------------------------------------------------- #
 
 
 
-# ---------------------------------------------------------- class: Competitor ----------------------------------------------------------- #
+# -------------------------------------------------------- class: GameCompetitor --------------------------------------------------------- #
 
-class Competitor(BaseCompetingObject):
+class GameCompetitor(Competitor):
 
     # ------------------------------------------------------------- Init ------------------------------------------------------------- #
 
@@ -24,13 +25,15 @@ class Competitor(BaseCompetingObject):
     ):
         super().__init__(d, sport_or_sport_dict=sport_or_sport_dict, country_or_country_dict=country_or_country_dict)
 
-        self.type = d['type']
+        self.score = d['score']
 
+        if self.score == int(self.score):
+            self.score = int(self.score)
 
-    # ----------------------------------------------------------- Overrides ---------------------------------------------------------- #
+        self.aggregated_score = d['aggregatedScore']
 
-    def _image_url_key(self) -> str:
-        return 'Competitors'
+        if self.aggregated_score == int(self.aggregated_score):
+            self.aggregated_score = int(self.aggregated_score)
 
 
 # ---------------------------------------------------------------------------------------------------------------------------------------- #

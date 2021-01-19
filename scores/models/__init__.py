@@ -1,4 +1,8 @@
-from .enums import *
+from .base import *
 
 from .game import Game
-from .competitor import Competitor
+from .competition import Competition
+from .game_competitor import GameCompetitor
+
+from .game_asset import GameAsset
+from .game_assets import GameAssets

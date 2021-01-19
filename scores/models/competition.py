@@ -10,9 +10,9 @@ from .base import BaseCompetingObject, Country, Sport
 
 
 
-# ---------------------------------------------------------- class: Competitor ----------------------------------------------------------- #
+# ---------------------------------------------------------- class: Competition ---------------------------------------------------------- #
 
-class Competitor(BaseCompetingObject):
+class Competition(BaseCompetingObject):
 
     # ------------------------------------------------------------- Init ------------------------------------------------------------- #
 
@@ -24,13 +24,18 @@ class Competitor(BaseCompetingObject):
     ):
         super().__init__(d, sport_or_sport_dict=sport_or_sport_dict, country_or_country_dict=country_or_country_dict)
 
-        self.type = d['type']
+        self.has_standings = self._d_val(d, 'hasStandings', False)
+        self.has_standings_groups = self._d_val(d, 'hasStandingsGroups', False)
+        self.has_active_games = self._d_val(d, 'hasActiveGames', False)
+        self.is_top = self._d_val(d, 'isTop', False)
+
+        self.total_games = self._d_val(d, 'totalGames', 0)
+        self.live_games = self._d_val(d, 'liveGames', 0)
 
 
     # ----------------------------------------------------------- Overrides ---------------------------------------------------------- #
 
     def _image_url_key(self) -> str:
-        return 'Competitors'
-
+        return 'Competitions'
 
 # ---------------------------------------------------------------------------------------------------------------------------------------- #
