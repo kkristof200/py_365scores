@@ -83,9 +83,6 @@ class Scores(Api):
                 except Exception as e:
                     if self.debug:
                         print(e, json.dumps(game_json, indent=4))
-                    
-                    exit(0)
-
             return games
         except Exception as e:
             if self.debug:

@@ -9,14 +9,14 @@ else:
 
 setuptools.setup(
     name="365scores",
-    version="1.0.4",
+    version="1.0.6",
     author="Kristof",
     description="365scores",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/kkristof200/py_365scores",
     packages=setuptools.find_packages(),
-    install_requires=["simple_multiprocessing", "kcu", "ksimpleapi", "jsoncodable"],
+    install_requires=["jsoncodable", "kcu", "ksimpleapi", "simple_multiprocessing"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",

@@ -55,7 +55,7 @@ class Game(BaseIdable):
         self.scheduled = self.status_group == 2 and not self.postponed and not self.cancelled and self.status_text.lower() == 'scheduled'
 
         self.game_time = d['gameTime']
-        self.game_time_display = d['gameTimeDisplay']
+        self.game_time_display = self._d_val(d, 'gameTimeDisplay', '')
         self.game_time_and_status_display_type = d['gameTimeAndStatusDisplayType']
         self.has_tv_networks = d['hasTVNetworks']
 
