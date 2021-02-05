@@ -51,7 +51,7 @@ class BaseCompetingObject(BaseObject):
     @property
     def sport_id(self) -> int:
         return self.sport.id
-    
+
     @property
     def sport_type(self) -> SportType:
         return SportType(self.sport_id)

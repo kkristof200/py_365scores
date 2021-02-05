@@ -50,7 +50,7 @@ class Scores(Api):
                     'onlyLiveGames': 'true' if only_live_games else None,
                     'sports': ','.join([sport.value if type(sport) == Sport else sport for sport in sports]) if sports else None,
                     'competitionIds': ','.join(competition_ids) if competition_ids else None
-                },
+                }
             ).json()
 
             games = []
@@ -73,11 +73,13 @@ class Scores(Api):
                     )
 
                     if (
-                        (not included_status_groups or game.status_group in included_status_groups) 
+                        (not included_status_groups or game.status_group in included_status_groups)
                         and
                         (include_cancelled or not game.cancelled)
                         and
                         (include_postponed or not game.postponed)
+                        and
+                        (not only_live_games or game.live)
                     ):
                         games.append(game)
                 except Exception as e:
